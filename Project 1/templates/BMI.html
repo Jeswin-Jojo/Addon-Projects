@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>BMI calculator</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='BMI.css') }}">
+</head>
+
+<body class="body">
+    <div class="main">
+        <div class="heading">
+            <b>BMI CALCULATOR</b>
+        </div>
+        <div class="main">
+            <br>
+            <div><br><br>
+                <form action="/" method="post">
+                    <b>ENTER THE HEIGHT:</b>
+                    <input name="height" id="txtHeight" type="text">
+                    <br><br><br>
+                    <b>ENTER THE WEIGHT:</b>
+                    <input name="weight" id="txtWeight" type="text">
+                    <br><br>
+                    <button type="submit" class="SUBMIT">SUBMIT</button>
+                </form>
+            </div>
+            <br><br>
+            <div class="Description">
+                <p>If BMI is less than 18.5 → Category: Underweight</p><br>
+                <p>If 18.5 ≤ BMI is less than 24.9 → Category: Normal</p><br>
+                <p>If 25 ≤ BMI is less than 29.9 → Category: Overweight</p><br>
+                <p>If BMI ≥ 30 → Category: Obese</p>
+            </div>
+            <br>
+            <br>
+            <div>
+                <b>VALUE:</b><input value="{{BMI}}" type="text"><b> CATEGORY:</b><input value="{{Category}}"
+                    type="text">
+                <div>
+                </div>
+</body>
+
+</html>

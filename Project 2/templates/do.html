@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" href="{{ url_for('static', filename='do.css') }}">
+</head>
+
+<body>
+  <div class="main">
+    <div class="header">
+        <h1>To-Do List</h1>
+    </div>
+    <form action="/" method="post">
+        <input type="text" name="task" placeholder="Add task" required>
+        <button type="submit">+</button>
+    </form>
+    <div class="header2">
+        <h2>Tasks</h2>
+    </div>
+    <ul>
+        {% for task in tasks %}
+        <li>
+            <span>{{ task }}</span>&nbsp;
+            <a href="{{ url_for('delete_task', task_id=loop.index0) }}">Del</a>
+        </li>
+        {% endfor %}
+    </ul>
+    </div>
+
+</body>
+
+</html>
